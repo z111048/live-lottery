@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 頁頭樣式 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 2em;
+  color: #2196f3;
+  margin: 0;
+}
+
+.users-count {
+  background-color: #e3f2fd;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+/* 登入區域樣式 */
+.login-section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.login-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.password-input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.password-input:focus {
+  border-color: #2196f3;
+  outline: none;
+}
+
+.login-button,
+.spin-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.login-button {
+  background-color: #2196f3;
+  color: white;
+}
+
+.login-button:hover {
+  background-color: #1976d2;
+}
+
+/* 管理員面板樣式 */
+.admin-panel {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.file-upload {
+  margin-bottom: 20px;
+}
+
+.file-input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px dashed #2196f3;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.file-name {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 5px;
+}
+
+.spin-button {
+  width: 100%;
+  padding: 15px;
+  background-color: #4caf50;
+  color: white;
+}
+
+.spin-button:hover:not(:disabled) {
+  background-color: #388e3c;
+}
+
+.spin-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* 錯誤訊息樣式 */
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 10px 0;
+  border-left: 4px solid #c62828;
+}
+
+/* 抽獎區域樣式 */
+.lottery-section {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.prize-display {
+  width: 300px;
+  height: 120px;
+  margin: 0 auto;
+  border: 4px solid #2196f3;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background: white;
+}
+
+.prize-indicator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 4px;
+  background-color: #ff4081;
+  z-index: 2;
+  transform: translateY(-50%);
+  box-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+}
+
+.prize-list-container {
+  position: relative;
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+
+.spinning .prize-list-container {
+  animation: spin 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.prize-item {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-33.333% * 2)); /* Move to the last third */
+  }
+}
+
+/* 得獎公告樣式 */
+.winner-announcement {
+  margin: 20px 0;
+  padding: 30px;
+  background-color: #fff8e1;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.winner-announcement h2 {
+  color: #f57c00;
+  margin-bottom: 10px;
+}
+
+.winner-prize {
+  font-size: 28px;
+  color: #e65100;
+  margin-top: 15px;
+  font-weight: bold;
+  animation: emphasize 0.5s ease-in-out;
+}
+
+/* 剩餘獎項樣式 */
+.remaining-prizes {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.remaining-prizes h3 {
+  margin-bottom: 15px;
+  color: #333;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.prizes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 10px;
+}
+
+.remaining-prize-item {
+  padding: 15px;
+  background-color: #e3f2fd;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.remaining-prize-item:hover {
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes emphasize {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
