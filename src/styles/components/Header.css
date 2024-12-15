@@ -1,0 +1,25 @@
+/* src/styles/components/Header.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 2em;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.users-count {
+  background-color: #e3f2fd;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: #1976d2;
+  font-weight: 500;
+}

@@ -1,0 +1,39 @@
+/* src/styles/components/Button.css */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  outline: none;
+}
+
+.button-primary {
+  background-color: #2196f3;
+  color: white;
+}
+
+.button-primary:hover:not(:disabled) {
+  background-color: #1976d2;
+}
+
+.button-primary:disabled {
+  background-color: #90caf9;
+  cursor: not-allowed;
+}
+
+.login-button {
+  min-width: 100px;
+  height: 40px;
+}
+
+.spin-button {
+  width: 100%;
+  height: 48px;
+  margin-top: 20px;
+  font-size: 16px;
+}

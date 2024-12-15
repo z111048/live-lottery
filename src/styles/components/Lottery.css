@@ -1,0 +1,68 @@
+/* src/styles/components/Lottery.css */
+.lottery-section {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.prize-display {
+  width: 300px;
+  height: 120px;
+  margin: 0 auto;
+  border: 4px solid var(--primary-color);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background: white;
+}
+
+.prize-indicator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 4px;
+  background-color: #ff4081;
+  z-index: 2;
+  transform: translateY(-50%);
+  box-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+}
+
+.prize-list-container {
+  position: relative;
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+
+.spinning .prize-list-container {
+  animation: spin 5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.winner-announcement {
+  margin: 20px 0;
+  padding: 30px;
+  background-color: var(--winner-bg);
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-66.666%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

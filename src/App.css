@@ -248,21 +248,26 @@ body {
 
 .prizes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* 自動填充列 */
   gap: 15px;
   padding: 10px;
 }
 
 .remaining-prize-item {
-  padding: 15px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
   background-color: #e3f2fd;
   border-radius: 8px;
   text-align: center;
   transition: transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 增加陰影效果 */
 }
 
 .remaining-prize-item:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px); /* 懸浮效果 */
 }
 
 @keyframes fadeIn {
